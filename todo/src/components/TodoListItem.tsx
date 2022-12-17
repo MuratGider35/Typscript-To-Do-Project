@@ -1,8 +1,8 @@
 import React from "react";
 
-const TodoListItem: React.FC<IListItem> = ({ item }) => {
+const TodoListItem: React.FC<IListItem> = ({ item, toggleTodo }) => {
   return (
-    <li>
+    <li onClick={() => toggleTodo(item)}>
       {item.isDone ? (
         <p className="checked">{item.task}</p>
       ) : (
