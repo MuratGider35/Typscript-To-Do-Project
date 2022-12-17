@@ -1,13 +1,14 @@
-import React from 'react'
-import TodoListItem from './TodoListItem'
+import React from "react";
+import TodoListItem from "./TodoListItem";
 
-
-const TodoList= () => {
+const TodoList: React.FC<ITodoList> = ({ todos }) => {
   return (
     <ul>
-      <TodoListItem />
+      {todos.map((item) => (
+        <TodoListItem key={item.id} item={item} />
+      ))}
     </ul>
-  )
-}
+  );
+};
 
-export default TodoList
+export default TodoList;
